@@ -1,0 +1,70 @@
+// input.scss
+@use 'base' as *;
+@use 'navigation';
+@use 'sass:color'; // Tuodaan color-moduuli käyttöön
+
+%piiloluokka {
+  margin: auto;
+  background-color: azure;
+  padding: 10px;
+}
+
+%textbox-sharad {
+  padding: 16px;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.textbox1, .textbox2 {
+  @extend %textbox-sharad;
+  border: solid 1px $primary-color;
+  background-color: $primary-color;
+
+  &:hover {
+    background-color: color.adjust($primary-color, $lightness: 10%);
+    border-color: color.adjust($primary-color, $lightness: -10%);
+  }
+}
+
+.center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+@mixin img-filter() {
+  width: 50%;
+  border: 1px solid $primary-color;
+  border-radius: 10px;
+  border-width: 10px;
+}
+
+.image1 {
+  @include img-filter();
+}
+
+.image2 {
+  @include img-filter();
+}
+
+@mixin btn($color, $sizes) {
+  background-color: $color;
+  height: $sizes;
+  border: 2px solid $color;
+  border-radius: $sizes;
+  color: white;
+  width: 100px;
+}
+
+.btn-primary {
+  @include btn($primary-color, map-get($btn-sizes, sm));
+}
+
+.btn-warning {
+  @include btn($warning-color, map-get($btn-sizes, md));
+}
+
+.btn-success {
+  @include btn($success-color, map-get($btn-sizes, lg));
+}

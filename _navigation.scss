@@ -1,0 +1,30 @@
+// _navigation.scss
+@use 'base' as *;
+
+nav {
+  height: 100px;
+  ul {
+    list-style-type: none;
+    background-color: beige;
+    overflow: auto;
+    padding: 0;
+    margin: 0 0 16px;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  a {
+    display: block;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: $primary-color;
+    padding: 16px 18px;
+
+    &:hover {
+      background-color: $primary-color;
+      color: black;
+    }
+  }
+}

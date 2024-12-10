@@ -1,0 +1,16 @@
+// _base.scss
+$primary-color: rgba(38, 153, 225, 0.842);
+$warning-color: orange;
+$success-color: green;
+$error-color: red;
+$padding-16: 16px;
+$btn-sizes: (
+  sm: 20px,
+  md: 30px,
+  lg: 40px
+);
+
+body {
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+}
